@@ -1,1 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
+.login-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0a0c0e;
+    overflow: hidden;
+}
+
+
+#particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+
+
+.login-card {
+
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.form-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-side h2 {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 204, 0, 1);
+}
+
+.form-side a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.panda-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panda-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: #ffd54f;
+    box-shadow: 0 0 40px rgba(255, 213, 79, 0.35), inset 0 0 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.panda-img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .panda-circle {
+        width: 200px;
+        height: 200px;
+        margin-top: 1rem;
+    }
+
+    .form-side {
+        width: 100%;
+    }
+}
+
+
+
+/* Borde animado verde */
+.login-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 4px;
+    /* grosor del borde */
+    border-radius: inherit;
+    background: linear-gradient(270deg, #eeff00, #ccc500, #ffcc00, #ff9900);
+    background-size: 400% 400%;
+    animation: borderGlow 4s linear infinite;
+    /* más rápido */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+/* Animación del gradiente */
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Resplandor externo pulsante */
+.login-card {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.8),
+        0 0 40px rgba(255, 204, 0, 0.6),
+        0 0 60px rgba(255, 204, 0, 0.4);
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.8),
+            0 0 40px rgba(255, 204, 0, 0.6),
+            0 0 60px rgba(255, 204, 0, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(255, 204, 0, 1),
+            0 0 80px rgba(255, 204, 0, 0.8),
+            0 0 120px rgba(255, 204, 0, 0.6);
+    }
+}
+
+.btn-panda {
+    background-color: #ffd54f !important;
+    border: none !important;
+    color: #000 !important;
+}
+
+.btn-panda:hover {
+    background-color: #ffeb3b !important;
+}
