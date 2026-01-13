@@ -1,0 +1,43 @@
+<div class="login-container">
+    <canvas id="particles"></canvas>
+    <p-card class="login-card">
+        <div class="card-content">
+            <!-- Columna izquierda: Formulario -->
+            <div class="form-side">
+                <h2>Iniciar Sesión</h2>
+                <small>Por favor, ingrese sus credenciales para continuar.</small>
+
+                <br /><br />
+                <p-floatlabel>
+                    <input pInputText id="Usuario" [(ngModel)]="usuario" autocomplete="off" required />
+                    <label for="Usuario">Usuario</label>
+                </p-floatlabel>
+                <small id="username-help">Inserte su usuario.</small>
+
+                <br /><br />
+
+                <p-floatlabel>
+                    <p-password [(ngModel)]="password" [toggleMask]="true" required />
+                    <label for="password">Contraseña</label>
+                </p-floatlabel>
+                <small id="password">Inserte su Contraseña.</small>
+
+                <br />
+                <p-button label="Ingresar" icon="pi pi-user" styleClass="btn-panda" (click)="login()"></p-button>
+                <br /><br />
+                <small class="forgot-link">
+                    <a routerLink="/forgot-password">¿Olvidaste tu contraseña?</a></small>
+                <small class="register-link">
+                    ¿No tienes una cuenta?
+                    <a routerLink="/register">Regístrate aquí</a></small>
+            </div>
+
+            <!-- Columna derecha: Panda -->
+            <div class="panda-side">
+                <div class="panda-circle">
+                    <img src="panda.png" alt="Panda" class="panda-img" />
+                </div>
+            </div>
+        </div>
+    </p-card>
+</div>
